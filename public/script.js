@@ -233,7 +233,7 @@ async function serverAction(action) {
 
 async function updateServerStatus() {
     try {
-        const response = await fetch('/api/status');
+        const response = await fetch('/api/server/status');
         const data = await response.json();
         
         updateServerStatusDisplay(data.status);
