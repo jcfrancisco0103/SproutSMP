@@ -295,7 +295,7 @@ After=network.target
 
 [Service]
 Type=simple
-User=minecraft
+User=${process.env.USER || 'root'}
 WorkingDirectory=${path.join(__dirname, '..')}
 ExecStart=/usr/bin/node server.js
 Restart=always
