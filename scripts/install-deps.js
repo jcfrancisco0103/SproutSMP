@@ -290,7 +290,7 @@ node server.js`;
         console.log('   ✅ Created start.sh');
         
         const systemdService = `[Unit]
-Description=Minecraft Server Wrapper
+Description=SproutSMP Wrapper
 After=network.target
 
 [Service]
@@ -305,12 +305,12 @@ Environment=NODE_ENV=production
 [Install]
 WantedBy=multi-user.target`;
         
-        fs.writeFileSync(path.join(__dirname, '..', 'minecraft-wrapper.service'), systemdService);
-        console.log('   ✅ Created minecraft-wrapper.service');
+        fs.writeFileSync(path.join(__dirname, '..', 'sproutsmpwrapper.service'), systemdService);
+        console.log('   ✅ Created sproutsmpwrapper.service');
         console.log('   To install as systemd service:');
-        console.log('   sudo cp minecraft-wrapper.service /etc/systemd/system/');
-        console.log('   sudo systemctl enable minecraft-wrapper');
-        console.log('   sudo systemctl start minecraft-wrapper');
+        console.log('   sudo cp sproutsmpwrapper.service /etc/systemd/system/');
+        console.log('   sudo systemctl enable sproutsmpwrapper');
+        console.log('   sudo systemctl start sproutsmpwrapper');
     }
     
     return true;
